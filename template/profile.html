@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile</title>
+  <style>
+    :root {
+      --dark-green: #225734;
+      --light-cream: #EEE1B5;
+      --danger-red: #cc0000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-cream);
+      color: var(--dark-green);
+    }
+
+    .navbar {
+      background-color: var(--dark-green);
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar .title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 32px;
+    }
+
+    .container h2 {
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--dark-green);
+      padding-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px;
+      border: 1px solid var(--dark-green);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-edit {
+      background-color: var(--light-cream);
+      color: var(--dark-green);
+      border: 2px solid var(--dark-green);
+    }
+
+    .btn-save {
+      background-color: var(--dark-green);
+      color: white;
+    }
+
+    .btn-cancel {
+      background-color: #999;
+      color: white;
+    }
+
+    .btn-delete {
+      background-color: var(--danger-red);
+      color: white;
+      margin-left: auto;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="dashboard.html">&#8592; Back</a>
+    <div class="title">My Profile</div>
+    <a href="logout.html">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>User Information</h2>
+    <form id="profileForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" value="Vanya Oberoi" disabled />
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" value="vanya.oberoi@example.com" disabled />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" value="+91 9876543210" disabled />
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" value="1998-05-05" disabled />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" disabled>
+            <option selected>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="loyalty">Loyalty Points</label>
+          <input type="number" id="loyalty" value="240" readonly />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Saved Address</label>
+        <textarea id="address" rows="3" disabled>123 Green Street, Eco City, India</textarea>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-edit" onclick="enableEditing()">Edit</button>
+        <button type="submit" class="btn btn-save" id="saveBtn" style="display:none;">Save</button>
+        <button type="button" class="btn btn-cancel" id="cancelBtn" style="display:none;" onclick="disableEditing()">Cancel</button>
+        <button type="button" class="btn btn-delete" onclick="deleteAccount()">Delete Account</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('#profileForm input:not([readonly]), #profileForm select, #profileForm textarea');
+    const editBtn = document.querySelector('.btn-edit');
+    const saveBtn = document.getElementById('saveBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    function enableEditing() {
+      inputs.forEach(input => input.disabled = false);
+      editBtn.style.display = 'none';
+      saveBtn.style.display = 'inline-block';
+      cancelBtn.style.display = 'inline-block';
+    }
+
+    function disableEditing() {
+      inputs.forEach(input => input.disabled = true);
+      editBtn.style.display = 'inline-block';
+      saveBtn.style.display = 'none';
+      cancelBtn.style.display = 'none';
+    }
+
+    function deleteAccount() {
+      if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+        alert("Account deleted. Redirecting...");
+        window.location.href = "logout.html"; // Simulate deletion
+      }
+    }
+
+    document.getElementById("profileForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Changes saved.");
+      disableEditing();
+    });
+  </script>
+
+</body>
+</html>
