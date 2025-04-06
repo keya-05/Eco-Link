@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eco Link Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #EEE1B5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-section img {
+      width: 200px;
+    }
+
+    .container {
+      background-color: #3d6b43;
+      padding: 20px 30px 40px 30px;
+      border-radius: 50px;
+      width: 500px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: white;
+    }
+
+    .container h2 {
+      margin-bottom: none ;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .container label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      background-color: #5ca270;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 12px;
+      margin-bottom: 20px;
+      color: #dcdcdc;
+    }
+
+    .container button {
+      width: 50%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: white;
+      color: #3d6b43;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 Logo OUTSIDE container -->
+  <div class="logo-section">
+    <img src="eco link.png" alt="Eco Link Logo">
+  </div>
+
+  <!-- Login Container -->
+  <div class="container">
+    <h2>WELCOME!</h2>
+
+    <label for="email">Email ID/Login:</label>
+    <input type="text" id="email" name="email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <div class="forgot">Forgot Password?</div>
+
+    <button>LOG IN</button>
+    <button>SIGN UP</button>
+  </div>
+
+</body>
+</html>
