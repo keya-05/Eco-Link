@@ -43,9 +43,16 @@
       z-index: 1;
     }
 
-    .navbar .left-arrow {
-      font-size: 24px;
+    .left-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       cursor: pointer;
+    }
+
+    .left-section img {
+      width: 40px;
+      height: 40px;
     }
 
     .navbar .timer {
@@ -170,6 +177,11 @@
       .profile {
         justify-content: center;
       }
+
+      .navbar .timer {
+        position: static;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -178,12 +190,14 @@
   <div class="background-overlay"></div>
 
   <div class="navbar">
-    <div class="left-arrow" aria-label="Go back" role="button">&#8592;</div>
+    <div class="left-section" onclick="goBackAlert()">
+      <span class="left-arrow" aria-label="Go back">&#8592;</span>
+       <a href="../template/Buy.html"><img src="../static/images/final.png" alt="Logo">
+    </div>
     <div class="timer" id="timer">TIME REMAINING: 1:50</div>
     <div class="profile">
       <div class="profile-info">
         <p>Hi User_55671</p>
-        <!-- ✅ Updated href to point to the profile page -->
         <a href="../template/profile.html">My Profile</a>
       </div>
       <div class="avatar" aria-label="User avatar"></div>
@@ -201,6 +215,7 @@
   </div>
 
   <script>
+    // Countdown Timer
     let time = 110;
     const timerEl = document.getElementById("timer");
     const interval = setInterval(() => {
@@ -215,6 +230,7 @@
       time--;
     }, 1000);
 
+    // Bid Submission
     function submitBid() {
       const bidInput = document.getElementById("bidInput");
       const highestBidEl = document.getElementById("highestBid");
@@ -228,6 +244,15 @@
 
       highestBidEl.innerText = `Highest Bid: ${newBid}/-`;
       bidInput.value = '';
+    }
+
+    // Arrow Click Alert
+    function goBackAlert() {
+      const confirmed = confirm("Are you sure you want to go back?");
+      if (confirmed) {
+        // Redirect or perform back action
+        window.history.back();
+      }
     }
   </script>
 
