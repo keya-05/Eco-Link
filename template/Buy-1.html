@@ -1,232 +1,217 @@
-<html>
-	<head>
-		<title>
-			Confirm Details
-		</title>
-		<link href="../static/style_Buy_Now.css" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-		<style>
-			body{
-	background-color:#EEE1B5;
-	margin:0;
-	font-size:30px;
-	color:#FFFFFF;
-	font-family:Instrument Sans;
-	box-sizing:border-box;
-}
-/*---------------------------Navbar-start----------------------*/
-.navbar{
-	background-color:#346840;
-	padding:15px;
-	width:100%;
-	height:14.25%;
-	display:flex;/*we use flex for alignmenttttt*/
-	align-items:center;/*vertically*/
-	justify-content:space-between;
-}
-.navbar img{
-		width:180px;
-		height:102px;
-}
-.navbar span{
-	font-size:1.8em;
-	margin-left:15px;
-}
-.profile{
-	display:flex;
-	align-items:center;
-	gap:10px;
-	font-size:0.5em;
-	text-align:right;
-	color:#EEE1B5;
-}
-.profile span a{
-	color:#EEE1B5;
-	font-size:0.8em;
-}
-.profile img {
-	height: 80px;
-	width: 80px;
-	border-radius:50%; 
-	margin-right:15px;
-}
-/*---------------------------Navbar-end----------------------*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Instrument Sans', sans-serif;
+    }
 
-/*---------------------------Buy_now-start----------------------*/
-.container{
-	margin:30px;
-	color:#346840;
-	box-sizing:border-box;
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-	flex-direction: column;
-}
-.container .pageHeading{
-	align-self: flex-start;
-	margin-left: 30px;
-	color: #346840;
-}
-.row{
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
-	gap:10px;
-}
-.col-3{
-	display:flex;
-	align-items:center;
-	justify-items:center;
-	margin:50px;
-	max-width:33.33%;
-	padding:15px;
-}
+    body {
+      margin: 0;
+      background: linear-gradient(to top, transparent 50%, #EEE1B5 50%),
+                  url('../static/images/background.png') no-repeat center bottom;
+      background-size: contain;
+      background-color: #EEE1B5;
+      color: #346840;
+    }
 
-.box{
-	height:285px;
-	width:300px;
-	color:white;
-	background-color:#346840;
-	border-radius:70px;
-	box-sizing:border-box;
-	padding:40px;
-	position: relative;
-}
-.box:hover{
-	cursor:pointer;
-	box-shadow:10px 10px gray;
-}
-.textCategory{
-	text-decoration:underline;
-	position:absolute;
-	top:20%;
-	left:15%;
-}
-.box img{
-	position:absolute;
-	bottom:5px;
-	right:5px;
-	height:170px;
-}
-	
+    /* Navbar */
+    .navbar {
+      background-color: #346840;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      color: #EEE1B5;
+    }
 
-/*---------------------------Buy_now-end----------------------*/
-/*------------------Confirm-Details-Start-----------------*/
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
 
-.centerDialogueBox{
-	background-color: #346840;
-	width: 700px;
-	height: 444px;
-	color: #FFFFFF;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	border-radius: 70px;
-	gap: 20px;
-}
-.centerDialogueBox h2 {
-	margin: 0;
-	font-size: 36px;
-	margin-top:30px;
-}
-.centerDialogueBox hr {
-	width: 100%;
-	border: 1px solid #EEE1B5;
-}
-.centerDialogueBox label {
-	font-size: 20px;
-}
-.centerDialogueBox input[type="radio"] {
-	margin-right: 10px;
-}
-.centerDialogueBox button {
-	margin-top: 20px;
-	cursor: pointer;
-}
-.dropDownBox{
-	background-color:#75BC84;
-	color:#EEE1B5;
-	box-sizing:border-box;
-	width:100%;
-	height:200px;
-	display:flex;
-}
-.centerDialogueBox select {
-	width: 80%;
-	padding: 12px;
-	font-size: 18px;
-	border-radius: 10px;
-	border: none;
-	background-color: #EBFBEE;
-	color: #346840;
-	margin-top: 10px;
-	box-sizing: border-box;
-}
-.centerDialogueBox label {
-	font-size: 20px;
-	margin-top: 10px;
-}
+    .navbar-left img {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
 
-button{
-	background-color:#EBFBEE;
-	color:#346840;
-	border-radius:20px;
-	height:50px;
-	width:150px;
-	box-sizing:border-box;
-	padding:15px;
-}
-	
+    .navbar-left span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-/*------------------Confirm-Details-end-----------------*/
-	
-		</style>
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      text-align: right;
+    }
 
-	</head>
-	<body>
-		<div class="navbar">
-			<div class="navbar-left">
-				<img src="../static/images/logo.png" alt="logo">
-				<span>
-					Eco link
-				</span>
-			</div>
-			<div class="profile">
-				<span>
-					Hi User_5567!
-					<br>
-					<a href="">My Profile</a>
-				</span>
-				<img class="profile" src="../static/images/avatar.png" alt="profile">
-			</div>
-		</div>
-		<div class="container">
-			<div class="pageHeading">
-				<h3><i class="bi bi-arrow-left"></i>
-				Buy Now</h3>
-			</div>
-			<div class="centerDialogueBox">
-				<h2>Confirm Details</h2>
-				<hr>
-				<select id="material-select" name="material">
-					<option value="" disabled selected>Material</option>
-					<option value="thermocol">Thermocol</option>
-					<option value="newspaper">Newspaper</option>
-					<option value="glass">Glass</option>
-					<option value="furniture">Furniture</option>
-					<option value="battery">Battery</option>
-					<option value="rubber">Rubber</option>
-				</select>
-				<button type="submit">
-					BID NOW
-				</button>
-			</div>
-		</div>
-	</body>
+    .profile span {
+      color: #EEE1B5;
+    }
+
+    .profile span a {
+      display: block;
+      font-size: 0.8rem;
+      color: #EEE1B5;
+      text-decoration: underline;
+    }
+
+    .profile img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    /* Page Heading */
+    .pageHeading {
+      padding: 30px 50px 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .pageHeading a {
+      text-decoration: underline;
+      color: #346840;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Confirm Box */
+    .centerDialogueBox {
+      background-color: #346840;
+      width: 95%;
+      max-width: 650px; /* slightly bigger */
+      margin: 40px auto;
+      padding: 40px 30px;
+      border-radius: 40px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      position: relative;
+    }
+
+    .centerDialogueBox h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .centerDialogueBox hr {
+      border: 1px solid #ffffff;
+      margin: 0 auto 20px;
+      width: 90%;
+    }
+
+    .centerDialogueBox select {
+      width: 80%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      background-color: #75BC84;
+      color: #ffffff;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='16' height='16' fill='%23EEE1B5' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658A.5.5 0 0 1 2.88 5h10.24a.5.5 0 0 1 .38.84l-4.796 5.482a.5.5 0 0 1-.758 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1rem;
+    }
+
+    .centerDialogueBox button {
+      margin-top: 20px;
+      background-color: #EBFBEE;
+      color: #346840;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .navbar-left img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .navbar-left span {
+        font-size: 1.2rem;
+      }
+
+      .profile img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .pageHeading {
+        padding: 20px;
+        font-size: 1.2rem;
+      }
+
+      .centerDialogueBox {
+        padding: 30px 20px;
+      }
+
+      .centerDialogueBox h2 {
+        font-size: 1.5rem;
+      }
+
+      .centerDialogueBox select {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <img src="../static/images/final.png" alt="logo">
+    </div>
+    <div class="profile">
+      <span>
+        Hi User_5567!<br>
+        <a href="../template/profile.html">My Profile</a>
+      </span>
+      <img src="../static/images/avatar.png" alt="profile">
+    </div>
+  </div>
+
+  <!-- Page Heading -->
+  <div class="pageHeading">
+    <a href="../template/buy.html"><i class="bi bi-arrow-left"></i> BUY NOW</a>
+  </div>
+
+  <!-- Confirm Details Box -->
+  <div class="centerDialogueBox">
+    <h2>CONFIRM DETAILS</h2>
+    <hr>
+    <select name="weight" id="weight">
+      <option value="" disabled selected>SELECT WEIGHT</option>
+      <option value="30.00 KG">30.00 KG</option>
+      <option value="40.00 KG">40.00 KG</option>
+      <option value="50.00 KG">50.00 KG</option>
+      <option value="60.00 KG">60.00 KG</option>
+      <option value="70.00 KG">70.00 KG</option>
+      <option value="80.00 KG">80.00 KG</option>
+    </select>
+    <br>
+    <br>
+    <a href="buy.html"><button type="submit">ENTER</button></a>
+  </div>
+
+</body>
 </html>
