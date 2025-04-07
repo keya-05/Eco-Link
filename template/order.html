@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>Confirmation/Alisha</title>
   <style>
+    :root {
+      --dark-green: #225734;
+      --light-green: #3e7e55;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,7 +19,7 @@
     }
 
     .top-bar {
-      background-color: #3e7e55;
+      background-color: var(--light-green);
       color: white;
       padding: 15px 25px;
       display: flex;
@@ -24,7 +29,8 @@
 
     .back-arrow {
       font-size: 24px;
-      cursor: pointer;
+      color: white;
+      text-decoration: none;
     }
 
     .profile-section {
@@ -39,8 +45,18 @@
       border-radius: 50%;
     }
 
+    .profile-section strong {
+      color: #EEE1B5 ;
+    }
+
+    .profile-section a {
+      color: #EEE1B5 ;
+      font-size: 12px;
+      text-decoration: underline;
+    }
+
     .confirmation-box {
-      background-color: #3e7e55;
+      background-color: var(--light-green);
       color: white;
       max-width: 550px;
       margin: 80px auto;
@@ -73,18 +89,18 @@
 <body>
 
   <div class="top-bar">
-    <a href='../template/Home.html'><div class="back-arrow">←</div> </a>
+    <a href='../template/Home.html' class="back-arrow">←</a>
     <div class="profile-section">
       <div>
         <strong>Hi User_5567!</strong><br>
-        <a href="#" style="color: #d3f3d3; font-size: 12px; text-decoration: none;">My Profile</a>
+        <a href="../template/profile.html">My Profile</a>
       </div>
       <img src="../static/images/avatar.png" alt="Avatar"> 
     </div>
   </div>
 
   <div class="confirmation-box">
-    <img src="../static/images/tick.png" alt="Confirmed Tick"> 
+    <img src="../static/images/tick.jpg" alt="Confirmed Tick"> 
     <h2>ORDER<br>CONFIRMED!</h2>
     <p>
       "Thank You For Choosing Eco Link!"<br><br>
