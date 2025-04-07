@@ -32,11 +32,6 @@
       height: auto;
     }
 
-    .logo span {
-      font-size: 100px;
-      font-weight: bold;
-    }
-
     .navbar .profile {
       text-align: right;
       display: flex;
@@ -66,11 +61,11 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      height: 45vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 40px 0;
-      min-height: 100vh;
+      align-items: flex-end;
+      padding-bottom: 20px;
     }
 
     .main-box {
@@ -79,10 +74,11 @@
       max-width: 800px;
       padding: 40px;
       border-radius: 30px;
-      border-color: white;
+      border: 8px solid white;
       box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
       text-align: center;
       color: white;
+      position: relative;
     }
 
     .main-box h2 {
@@ -109,6 +105,13 @@
       justify-content: center;
       font-weight: bold;
       color: black;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .option-box:hover {
+      background-color: #EEE1B5;
+      transform: scale(1.05);
     }
 
     .option-box img {
@@ -121,6 +124,14 @@
       text-decoration: underline;
       cursor: pointer;
       font-size: 14px;
+    }
+
+    .small-note {
+      text-align: center;
+      font-size: 12px;
+      font-style: italic;
+      margin-top: 10px;
+      color: #3F704D;
     }
 
     .footer {
@@ -162,8 +173,11 @@
     </div>
   </div>
 
+  <div class="small-note">*Choose an option to continue your sustainable journey</div>
+
   <div class="footer">
     Recycling Made Smart, Sustainability Made Simple ♻️
   </div>
 </body>
 </html>
+
