@@ -29,8 +29,9 @@
     }
 
     .navbar span {
-      font-size: 1.8em;
+      font-size: 1.5em;
       margin-left: 15px;
+      font-weight: bold;
     }
 
     .navbar .profile {
@@ -57,7 +58,7 @@
       max-width: 1000px;
       margin: 40px auto;
       padding: 30px;
-      background-color: #ffffff;
+      background-color: #EBFBEE;
       border-radius: 30px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -73,6 +74,27 @@
       line-height: 1.6;
       margin-bottom: 20px;
       color: #2e573b;
+    }
+
+    .back-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .back-button a {
+      background-color: #346840;
+      color: #EBFBEE;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button a:hover {
+      background-color: #2a5634;
     }
 
     .footer {
@@ -105,6 +127,7 @@
 </head>
 <body>
 
+  <!-- Navbar -->
   <div class="navbar">
     <div class="navbar-left">
       <img src="../static/images/logo.png" alt="Eco Link Logo">
@@ -120,6 +143,7 @@
     </div>
   </div>
 
+  <!-- About Us Content -->
   <div class="content">
     <h1>About Us</h1>
     <p>At <strong>Eco Link</strong>, we believe that sustainability starts with small actions. Our platform empowers communities to recycle, upcycle, and responsibly dispose of materials through a transparent and fair bidding system.</p>
@@ -131,6 +155,12 @@
     <p>Join us in building a greener tomorrow — one bid at a time.</p>
   </div>
 
+  <!-- Back Button -->
+  <div class="back-button">
+    <a href="../template/Home.html">&#8592; Back to Home</a>
+  </div>
+
+  <!-- Footer -->
   <div class="footer">
     &copy; 2025 Eco Link | All Rights Reserved
   </div>
