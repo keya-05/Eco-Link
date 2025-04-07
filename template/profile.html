@@ -139,9 +139,9 @@
 <body>
 
   <div class="navbar">
-    <a href="dashboard.html">&#8592; Back</a>
+    <a href="#" onclick="goBack(event)">&#8592; Back</a>
     <div class="title">My Profile</div>
-    <a href="logout.html">Logout</a>
+    <a href="#" onclick="confirmLogout(event)">Logout</a>
   </div>
 
   <div class="container">
@@ -222,6 +222,20 @@
       if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
         alert("Account deleted. Redirecting...");
         window.location.href = "logout.html"; // Simulate deletion
+      }
+    }
+
+    function confirmLogout(event) {
+      event.preventDefault();
+      if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "../template/login.html";
+      }
+    }
+
+    function goBack(event) {
+      event.preventDefault();
+      if (confirm("Do you want to go back to the previous page?")) {
+        window.history.back();
       }
     }
 
