@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eco Link Home</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #EEE1B5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .navbar {
@@ -18,12 +24,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 30px;
+      padding: 12px 20px;
       width: 100%;
     }
 
     .logo img {
-      width: 250px;
+      width: 180px;
       height: auto;
     }
 
@@ -36,6 +42,7 @@
     .profile p {
       margin: 0;
       font-weight: bold;
+      font-size: 14px;
     }
 
     .profile a {
@@ -46,8 +53,8 @@
 
     .profile img {
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
     }
 
     .top-bg {
@@ -55,61 +62,62 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 45vh;
+      height: 35vh;
       width: 100%;
     }
 
     .main-box {
       background-color: #44784F;
-      width: 80%;
+      width: 90%;
       max-width: 800px;
-      padding: 40px;
-      border-radius: 30px;
-      border: 8px solid white;
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-      text-align: center;
+      margin: -60px auto 20px auto;
+      padding: 30px;
+      border-radius: 25px;
+      border: 6px solid white;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
       color: white;
-      margin: -60px auto 0 auto; /* moved slightly up */
+      text-align: center;
       position: relative;
       z-index: 1;
     }
 
     .main-box h2 {
       margin-bottom: 20px;
+      font-size: 1.4rem;
       text-decoration: underline;
     }
 
     .options {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 100px;
-      margin: 30px 0;
+      gap: 40px;
+      margin: 25px 0;
     }
 
     .option-box {
       background-color: #EEE1B5A8;
-      width: 170px;
-      height: 160px;
-      border-radius: 25px;
-      box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       font-weight: bold;
       color: black;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .option-box:hover {
       transform: scale(1.05);
-      box-shadow: 5px 5px 12px rgba(0,0,0,0.4);
+      box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
     }
 
     .option-box img {
-      width: 100px;
+      width: 70px;
       margin-top: 10px;
     }
 
@@ -129,9 +137,32 @@
     .small-note {
       font-style: italic;
       font-size: 13px;
-      margin-top: 10px;
+      margin: 10px auto;
       text-align: center;
       color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .option-box {
+        width: 120px;
+        height: 120px;
+      }
+
+      .option-box img {
+        width: 60px;
+      }
+
+      .main-box {
+        padding: 20px;
+      }
+
+      .main-box h2 {
+        font-size: 1.1rem;
+      }
+
+      .logo img {
+        width: 150px;
+      }
     }
   </style>
 </head>
