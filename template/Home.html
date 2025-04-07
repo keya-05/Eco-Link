@@ -10,6 +10,11 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #EEE1B5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
     .navbar {
@@ -19,12 +24,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 30px;
-    }
-
-    .navbar .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      width: 100%;
     }
 
     .logo img {
@@ -32,40 +32,36 @@
       height: auto;
     }
 
-    .navbar .profile {
-      text-align: right;
+    .profile {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .navbar .profile p {
+    .profile p {
       margin: 0;
       font-weight: bold;
     }
 
-    .navbar .profile a {
+    .profile a {
       color: #EEE1B5;
       text-decoration: underline;
       font-size: 12px;
     }
 
-    .navbar .profile img {
+    .profile img {
       border-radius: 50%;
       width: 40px;
       height: 40px;
     }
 
-    .background-wrapper {
+    .top-bg {
       background-image: url('../static/images/background.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       height: 45vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 20px;
+      width: 100%;
     }
 
     .main-box {
@@ -78,7 +74,8 @@
       box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
       text-align: center;
       color: white;
-      position: relative;
+      margin-top: -80px;
+      z-index: 1;
     }
 
     .main-box h2 {
@@ -106,12 +103,13 @@
       font-weight: bold;
       color: black;
       cursor: pointer;
-      transition: transform 0.2s, background-color 0.3s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
     }
 
     .option-box:hover {
-      background-color: #EEE1B5;
       transform: scale(1.05);
+      box-shadow: 5px 5px 12px rgba(0,0,0,0.4);
     }
 
     .option-box img {
@@ -124,25 +122,24 @@
       text-decoration: underline;
       cursor: pointer;
       font-size: 14px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .about-link:hover {
+      opacity: 0.8;
     }
 
     .small-note {
-      text-align: center;
-      font-size: 12px;
       font-style: italic;
+      font-size: 13px;
       margin-top: 10px;
-      color: #3F704D;
-    }
-
-    .footer {
-      margin: 20px 0;
-      text-align: center;
-      color: #3F704D;
-      font-style: italic;
+      color: #333;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <div class="navbar">
     <div class="logo">
       <img src="logo2.png" alt="Eco Link Logo" />
@@ -150,34 +147,32 @@
     <div class="profile">
       <div>
         <p>Hi User_5567!</p>
-        <a href="#">My Profile</a>
+        <a href="profile.html">My Profile</a>
       </div>
       <img src="../static/images/avatar.png" alt="Profile Pic" />
     </div>
   </div>
 
-  <div class="background-wrapper">
-    <div class="main-box">
-      <h2>What Would You Like To Do Today?</h2>
-      <div class="options">
-        <div class="option-box">
-          BUY
-          <img src="../static/images/buy1.png" alt="Buy Icon" />
-        </div>
-        <div class="option-box">
-          SELL
-          <img src="../static/images/home.png" alt="Sell Icon" />
-        </div>
-      </div>
-      <div class="about-link">ABOUT US</div>
+  <!-- Top Background Section -->
+  <div class="top-bg"></div>
+
+  <!-- Main Content Box -->
+  <div class="main-box">
+    <h2>What Would You Like To Do Today?</h2>
+    <div class="options">
+      <a href="buy.html" class="option-box">
+        BUY
+        <img src="../static/images/buy1.png" alt="Buy Icon" />
+      </a>
+      <a href="sell.html" class="option-box">
+        SELL
+        <img src="../static/images/home.png" alt="Sell Icon" />
+      </a>
     </div>
+    <a href="about.html" class="about-link">ABOUT US</a>
   </div>
 
+  <!-- Small Italic Note -->
   <div class="small-note">*Choose an option to continue your sustainable journey</div>
-
-  <div class="footer">
-    Recycling Made Smart, Sustainability Made Simple ♻️
-  </div>
 </body>
 </html>
-
