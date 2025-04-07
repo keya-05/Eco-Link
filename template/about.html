@@ -23,8 +23,9 @@
       color: #EEE1B5;
     }
 
-    .navbar img {
-      width: 120px;
+    .navbar-left img {
+      max-width: 120px;
+      width: 100%;
       height: auto;
     }
 
@@ -34,7 +35,7 @@
       font-weight: bold;
     }
 
-    .navbar .profile {
+    .profile {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -42,13 +43,13 @@
       font-size: 0.9em;
     }
 
-    .navbar .profile a {
+    .profile a {
       color: #EEE1B5;
       font-size: 0.9em;
       text-decoration: underline;
     }
 
-    .navbar .profile img {
+    .profile img {
       height: 60px;
       width: 60px;
       border-radius: 50%;
@@ -114,13 +115,17 @@
         font-size: 1.3em;
       }
 
-      .navbar .profile {
+      .profile {
         font-size: 0.8em;
       }
 
-      .navbar .profile img {
+      .profile img {
         height: 50px;
         width: 50px;
+      }
+
+      .navbar-left img {
+        max-width: 100px;
       }
     }
   </style>
@@ -131,7 +136,6 @@
   <div class="navbar">
     <div class="navbar-left">
       <img src="../static/images/final.png" alt="Eco Link Logo">
-      <span>Eco link</span>
     </div>
     <div class="profile">
       <span>
