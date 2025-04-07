@@ -43,16 +43,9 @@
       z-index: 1;
     }
 
-    .left-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .navbar .left-arrow {
+      font-size: 24px;
       cursor: pointer;
-    }
-
-    .left-section img {
-      width: 40px;
-      height: 40px;
     }
 
     .navbar .timer {
@@ -177,11 +170,6 @@
       .profile {
         justify-content: center;
       }
-
-      .navbar .timer {
-        position: static;
-        transform: none;
-      }
     }
   </style>
 </head>
@@ -190,10 +178,7 @@
   <div class="background-overlay"></div>
 
   <div class="navbar">
-    <div class="left-section" onclick="goBackAlert()">
-      <span class="left-arrow" aria-label="Go back">&#8592;</span>
-       <a href="../template/Buy.html"><img src="../static/images/final.png" alt="Logo">
-    </div>
+    <div class="left-arrow" aria-label="Go back" role="button" onclick="goBack()">&#8592;</div>
     <div class="timer" id="timer">TIME REMAINING: 1:50</div>
     <div class="profile">
       <div class="profile-info">
@@ -215,7 +200,6 @@
   </div>
 
   <script>
-    // Countdown Timer
     let time = 110;
     const timerEl = document.getElementById("timer");
     const interval = setInterval(() => {
@@ -230,7 +214,6 @@
       time--;
     }, 1000);
 
-    // Bid Submission
     function submitBid() {
       const bidInput = document.getElementById("bidInput");
       const highestBidEl = document.getElementById("highestBid");
@@ -246,12 +229,10 @@
       bidInput.value = '';
     }
 
-    // Arrow Click Alert
-    function goBackAlert() {
-      const confirmed = confirm("Are you sure you want to go back?");
-      if (confirmed) {
-        // Redirect or perform back action
-        window.history.back();
+    function goBack() {
+      const confirmGoBack = confirm("Are you sure you want to go back?");
+      if (confirmGoBack) {
+        history.back();
       }
     }
   </script>
